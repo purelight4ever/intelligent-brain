@@ -19,9 +19,9 @@ class Register extends React.Component {
 		this.setState({password: event.target.value})
 	}
 
-	onSubmitSignIn = (req, res) => {
+	onSubmitSignIn = () => {
 		fetch('https://pure-sands-59281.herokuapp.com/register', {
-			method: 'post',
+			method: 'POST',
 			headers: {'Content-Type': 'application/json'},
 			body: JSON.stringify({
 				email: this.state.email,
@@ -30,7 +30,7 @@ class Register extends React.Component {
 			})
 		})
 		.then(response => {response.json()})
-		.then(user => {
+		.then(json(user) => {
 			if (user.id) {
 				this.props.loadUser(user)
 				this.props.onRouteChange('home');
