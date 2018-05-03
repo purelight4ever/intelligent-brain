@@ -20,7 +20,7 @@ class Register extends React.Component {
 	}
 
 	onSubmitSignIn = () => {
-		fetch('https://pure-sands-59281.herokuapp.com/register', {
+		fetch("https://pure-sands-59281.herokuapp.com/register", {
 			method: 'POST',
 			headers: {
 				'Accept':'application/json',
@@ -41,7 +41,7 @@ class Register extends React.Component {
 				this.props.loadUser(user)
 				this.props.onRouteChange('home');
 			}else {
-				console.log(user);
+				console.log('STILL NOT WORKING!');
 			}
 		});
 		
