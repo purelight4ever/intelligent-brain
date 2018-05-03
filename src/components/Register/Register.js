@@ -32,13 +32,18 @@ class Register extends React.Component {
 				name: this.state.name
 			})
 		})
-		.then((response) => response.json())
+		.then(response => {
+			if(response.status === 200) return response.json();
+  			else return { error: 'there was an error with response' }
+		})
 		.then(user => {
 			if (user.id) {
 				this.props.loadUser(user)
 				this.props.onRouteChange('home');
+			}else {
+				console.log('Hadshi ma khaddamsh')
 			}
-		})
+		});
 		
 	}
 
