@@ -38,9 +38,10 @@ class Register extends React.Component {
 		})
 		.then(user => {
 			if (user.id) {
-				this.props.loadUser(user);	
-			}else {
+				this.props.loadUser(user)
 				this.props.onRouteChange('home');
+			}else {
+				
 			}
 		});
 		
@@ -89,7 +90,7 @@ class Register extends React.Component {
 			      onClick={this.onSubmitSignIn} 
 			      className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib" 
 			      type="submit" 
-			      value="Register" 
+			      value="register" 
 			      />
 			    </div>
 			  </div>
