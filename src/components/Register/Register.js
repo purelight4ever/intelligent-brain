@@ -22,14 +22,17 @@ class Register extends React.Component {
 	onSubmitSignIn = () => {
 		fetch('https://pure-sands-59281.herokuapp.com/register', {
 			method: 'POST',
-			headers: {'Content-Type': 'application/json'},
+			headers: {
+				'Accept':'application/json',
+				'Content-Type': 'application/json'
+        },
 			body: JSON.stringify({
 				email: this.state.email,
 				password: this.state.password,
 				name: this.state.name
 			})
 		})
-		.then(response => response.json())
+		.then((response) => response.json())
 		.then(user => {
 			if (user.id) {
 				this.props.loadUser(user)
