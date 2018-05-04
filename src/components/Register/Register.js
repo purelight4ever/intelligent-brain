@@ -20,7 +20,7 @@ class Register extends React.Component {
 	}
 
 	onSubmitSignIn = (req, res) => {
-		fetch("https://pure-sands-59281.herokuapp.com/Register", {
+		fetch("https://pure-sands-59281.herokuapp.com/register", {
 			method: 'POST',
 			headers: {
 				'Accept':'application/json',
@@ -38,12 +38,11 @@ class Register extends React.Component {
 		})
 		.then(user => {
 			if (user.id) {
-				this.props.loadUser(user)
-				this.props.onRouteChange('home');
-			}else {
-				console.log('STILL NOT WORKING!');
+				this.props.loadUser(user[0])
+				this.props.onRouteChange('home');	
 			}
-		});
+		})
+		.catch(err => console.log(err))
 		
 	}
 
@@ -90,7 +89,7 @@ class Register extends React.Component {
 			      onClick={this.onSubmitSignIn} 
 			      className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib" 
 			      type="submit" 
-			      value="Register" 
+			      value="register" 
 			      />
 			    </div>
 			  </div>
