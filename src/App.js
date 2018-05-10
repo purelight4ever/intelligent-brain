@@ -75,7 +75,7 @@ class App extends Component {
 
   onButtonSubmit = (req, res) => {
     this.setState({imageUrl: this.state.input});
-    fetch('https://pure-sands-59281.herokuapp.com/imageUrl', {
+    fetch('https://intelligent-brain.herokuapp.com/imageUrl', {
       method: 'post',
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({
@@ -85,7 +85,7 @@ class App extends Component {
       .then(response => response.json())
       .then(response => {
         if (response) {
-          fetch('https://pure-sands-59281.herokuapp.com/image', {
+          fetch('https://intelligent-brain.herokuapp.com/image', {
             method: 'put',
             headers: {'Content-Type': 'application/json'},
             body: JSON.stringify({
