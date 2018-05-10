@@ -54,7 +54,7 @@ class Signin extends React.Component {
 			      <div className="mv3">
 			        <label className="db fw6 lh-copy f6" htmlFor="password">Password</label>
 			        <input 
-			        className="b pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" 
+			        className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100" 
 			        type="password" 
 			        name="password"  
 			        id="password" 
