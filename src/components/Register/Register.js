@@ -90,6 +90,9 @@ class Register extends React.Component {
 			      type="submit" 
 			      value="Register" 
 			      />
+				<div className="lh-copy mt3">
+			      <p onClick={() => onRouteChange('signin')}  className="f6 link dim black db pointer">Signin</p>
+			    </div>
 			    </div>
 			  </div>
 			</main>
